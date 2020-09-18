@@ -1,0 +1,19 @@
+{
+  "name": "yan-utils",
+  "version": "1.0.0",
+  "description": "yan's utils",
+  "main": "lib/utils.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack "
+  },
+  "keywords": [
+    "utils"
+  ],
+  "author": "yangang",
+  "license": "ISC",
+  "devDependencies": {
+    "webpack": "^4.44.2",
+    "webpack-cli": "^3.3.12"
+  }
+}
