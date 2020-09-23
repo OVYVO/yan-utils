@@ -1,3 +1,4 @@
-import array from "./array";
+import array from './array'
+import deepclone from './deepclone'
 
-export default { array };
+export default { array, deepclone }
