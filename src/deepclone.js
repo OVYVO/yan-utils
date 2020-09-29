@@ -4,41 +4,29 @@
  * @return {array || object}
  */
 
-const cloneDeep = (target, hash = new WeakMap()) =>
-{
-  if (typeof target !== 'object' || target === null)
-  {
-    return target
+const cloneDeep = (target, hash = new WeakMap()) => {
+  if (typeof target !== 'object' || target === null) {
+    return target;
   }
-  if (hash.has(target)) return hash.get(target)
-  const cloneTarget = Array.isArray(target) ? [] : {}
-  hash.set(target, cloneTarget)
-  const symKeys = Object.getOwnPropertySymbols(target)
-  if (symKeys.length)
-  {
-    symKeys.forEach((symKey) =>
-    {
-      if (typeof target[symKey] === 'object' && target[symKey] !== null)
-      {
-        cloneTarget[symKey] = cloneDeep(target[symKey])
+  if (hash.has(target)) return hash.get(target);
+  const cloneTarget = Array.isArray(target) ? [] : {};
+  hash.set(target, cloneTarget);
+  const symKeys = Object.getOwnPropertySymbols(target);
+  if (symKeys.length) {
+    symKeys.forEach(symKey => {
+      if (typeof target[symKey] === 'object' && target[symKey] !== null) {
+        cloneTarget[symKey] = cloneDeep(target[symKey]);
+      } else {
+        cloneTarget[symKey] = target[symKey];
       }
-      else
-      {
-        cloneTarget[symKey] = target[symKey]
-      }
-    })
+    });
   }
-  for (const i in target)
-  {
-    if (Object.prototype.hasOwnProperty.call(target, i))
-    {
-      cloneTarget[i] =
-        typeof target[i] === 'object' && target[i] !== null ?
-        cloneDeep(target[i], hash) :
-        target[i]
+  for (const i in target) {
+    if (Object.prototype.hasOwnProperty.call(target, i)) {
+      cloneTarget[i] = typeof target[i] === 'object' && target[i] !== null ? cloneDeep(target[i], hash) : target[i];
     }
   }
-  return cloneTarget
-}
+  return cloneTarget;
+};
 
-export default { cloneDeep }
+export default { cloneDeep };
