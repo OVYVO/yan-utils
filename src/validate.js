@@ -27,14 +27,19 @@ const isIphoneX = function () {
   return regResult;
 };
 // 判断是身份证号是否正确
-export function isIdCard(str) {
+const isIdCard = function (str) {
   const regResult = /^(^[1-9]\d{7}((0\d)|(1[0-2]))(([0|1|2]\d)|3[0-1])\d{3}$)|(^[1-9]\d{5}[1-9]\d{3}((0\d)|(1[0-2]))(([0|1|2]\d)|3[0-1])((\d{4})|\d{3}[Xx])$)$/.test(str);
   return regResult;
-}
+};
+// 判断邮箱是否正确
+const isEmail = function (str) {
+  return /\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*/.test(str);
+};
 
 export default {
   isPC,
   isPhone,
   isIphoneX,
   isIdCard,
+  isEmail,
 };
