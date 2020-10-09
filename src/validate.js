@@ -7,16 +7,34 @@
  * @FilePath: \yan-utils\src\validate.js
  */
 
-/**
- * @description: 
- * @param {type} 
- * @return {type} 
- */
+let userAgent = '';
+if (typeof navigator !== 'undefined') {
+  userAgent = navigator.userAgent.toLowerCase();
+}
+// 是否是PC端
+const isPC = function () {
+  const regResult = !/Android|webOS|iPhone|iPod|BlackBerry/i.test(userAgent);
+  return regResult;
+};
+// 手机号码正则
 const isPhone = function (str) {
-    const regResult = /^(0|86|17951)?1[3456789]\d{9}$/.test(str)
-    return regResult
+  const regResult = /^(0|86|17951)?1[3456789]\d{9}$/.test(str);
+  return regResult;
+};
+// 判断是否是iphonex
+const isIphoneX = function () {
+  const regResult = /iPhone[\s\S]*OS X/.test(userAgent);
+  return regResult;
+};
+// 判断是身份证号是否正确
+export function isIdCard(str) {
+  const regResult = /^(^[1-9]\d{7}((0\d)|(1[0-2]))(([0|1|2]\d)|3[0-1])\d{3}$)|(^[1-9]\d{5}[1-9]\d{3}((0\d)|(1[0-2]))(([0|1|2]\d)|3[0-1])((\d{4})|\d{3}[Xx])$)$/.test(str);
+  return regResult;
 }
 
 export default {
-    isPhone
-}
+  isPC,
+  isPhone,
+  isIphoneX,
+  isIdCard,
+};
