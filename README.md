@@ -13,6 +13,5 @@ npm i yan-utils -S
 # 使用
 
 ```js
-import { arrayIntersection } from "yan-utils";
-import arrayIntersection from "yan-utils/lib/arrayIntersection";
+
 ```
