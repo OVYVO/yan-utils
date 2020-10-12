@@ -1,6 +1,6 @@
 {
   "name": "yan-utils",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "yan's utils",
   "main": "dist/bundle.js",
   "scripts": {
