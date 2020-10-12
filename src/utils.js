@@ -7,4 +7,4 @@ import validate from './validate';
 import xlsx from './xlsx';
 import smoothscroll from './smoothscroll';
 
-export default { array, deepclone, object, copy, rem, validate, xlsx, smoothscroll };
+export default { ...array, ...deepclone, ...object, ...copy, ...rem, ...validate, ...xlsx, ...smoothscroll };
