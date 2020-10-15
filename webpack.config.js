@@ -7,7 +7,7 @@ module.exports = {
   entry,
   mode: 'production',
   output: {
-    path: path.resolve(__dirname,'dist'),
+    path: path.resolve(__dirname,'lib'),
     publicPath: '/yan-utils/',
     filename: '[name].js',
     library: 'yan-[name]',
@@ -31,10 +31,5 @@ module.exports = {
   },
   plugins: [
     new CleanWebpackPlugin()
-  ],
-  // devServer: {
-  //   contentBase: path.join(__dirname, './dist'), //根目录
-  //   open: true, //自动打开浏览器
-  //   port: 9000,
-  // },
+  ]
 };

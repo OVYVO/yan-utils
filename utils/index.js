@@ -20,6 +20,7 @@ const entry = (function getEntry() {
   getFile(prefix)
   return collect
 })()
+
 module.exports = {
   entry
 }
