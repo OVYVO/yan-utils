@@ -2,27 +2,25 @@
   "name": "yan-utils",
   "version": "1.0.1",
   "description": "yan's utils",
-  "main": "dist/bundle.js",
+  "main": "lib",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "webpack-dev-server --config build/webpack.config.js",
-    "build": "webpack --config build/webpack.config.js"
+    "dev": "webpack-dev-server --config webpack.config.js",
+    "build": "webpack --config webpack.config.js"
   },
   "keywords": [
     "yan-utils"
   ],
   "files": [
-    "dist",
+    "lib",
     "src"
   ],
   "author": "vue12306@163.com",
   "license": "ISC",
   "devDependencies": {
-    "babel-core": "^6.26.3",
-    "babel-loader": "^7.1.5",
-    "babel-polyfill": "^6.26.0",
-    "babel-preset-es2015": "^6.24.1",
-    "babel-preset-latest": "^6.24.1",
+    "@babel/core": "^7.12.0",
+    "@babel/preset-env": "^7.12.0",
+    "babel-loader": "^8.1.0",
     "clean-webpack-plugin": "^3.0.0",
     "html-webpack-plugin": "^4.5.0",
     "webpack": "^4.44.2",

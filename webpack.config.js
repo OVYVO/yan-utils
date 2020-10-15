@@ -1,12 +1,14 @@
 // const path = require('path');
 const {CleanWebpackPlugin} = require('clean-webpack-plugin')
-const { entry,getHtmlPlugins } = require("./utils");
+const path = require('path')
+const { entry } = require("./utils");
 
 module.exports = {
   entry,
-  mode: 'development',
-  devtool: 'source-map',
+  mode: 'production',
   output: {
+    path: path.resolve(__dirname,'dist'),
+    publicPath: '/yan-utils/',
     filename: '[name].js',
     library: 'yan-[name]',
     libraryTarget: 'umd',
@@ -28,7 +30,6 @@ module.exports = {
     ],
   },
   plugins: [
-    ...getHtmlPlugins(),
     new CleanWebpackPlugin()
   ],
   // devServer: {
