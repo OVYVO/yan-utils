@@ -13,5 +13,6 @@ npm i yan-utils -S
 # 使用
 
 ```js
-import utils from 'yan-utils';
+import xxx from 'yan-utils';
+import { xxx } from 'yan-utils/lib/array.js';
 ```
