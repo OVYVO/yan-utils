@@ -6,4 +6,4 @@ import rem from './rem';
 import validate from './validate';
 import smoothscroll from './smoothscroll';
 
-export default { array, deepclone, object, copy, rem, validate, smoothscroll };
+export default { ...array, ...deepclone, ...object, ...copy, ...rem, ...validate, ...smoothscroll };
