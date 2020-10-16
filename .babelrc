@@ -1,5 +1,5 @@
 {
-    "presets": [["@babel/preset-env",{"modules": "commonjs","useBuiltIns": "usage"}]],
+    "presets": [["@babel/preset-env",{"modules": "commonjs","corejs": "3","useBuiltIns": "usage"}]],
     "plugins":[
       ["@babel/plugin-transform-runtime",{"corejs": 3}]
     ]

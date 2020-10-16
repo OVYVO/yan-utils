@@ -37,6 +37,7 @@
     "url": "https://github.com/OVYVO/yan-utils/issues"
   },
   "dependencies": {
-    "@babel/polyfill": "^7.12.1"
+    "@babel/polyfill": "^7.12.1",
+    "core-js": "^3.6.5"
   }
 }
