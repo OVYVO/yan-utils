@@ -35,5 +35,8 @@
   },
   "bugs": {
     "url": "https://github.com/OVYVO/yan-utils/issues"
+  },
+  "dependencies": {
+    "@babel/polyfill": "^7.12.1"
   }
 }
