@@ -1,3 +1,11 @@
+/*
+ * @Author: your name
+ * @Date: 2020-09-23 20:41:16
+ * @LastEditTime: 2020-10-18 09:41:33
+ * @LastEditors: your name
+ * @Description: In User Settings Edit
+ * @FilePath: \yan-utils\src\deepclone.js
+ */
 /**
  * @description: 深拷贝
  * @param {array || object}
@@ -29,4 +37,6 @@ const cloneDeep = (target, hash = new WeakMap()) => {
   return cloneTarget;
 };
 
-export default { cloneDeep };
+export default {
+  cloneDeep
+};

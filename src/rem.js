@@ -4,6 +4,7 @@
  */
 const rem = (size = 750) => {
   if (typeof window === 'undefined') return;
+
   function adjustScreen() {
     document.documentElement.style.fontSize = Math.min(100, 100 * (document.documentElement.clientWidth / size)) + 'px';
   }

@@ -1,8 +1,12 @@
-/**
- * @description: raf实现平滑滚动
- * @param {object}
- * @return {object}
+/*
+ * @Author: your name
+ * @Date: 2020-10-18 09:36:13
+ * @LastEditTime: 2020-10-18 09:42:01
+ * @LastEditors: your name
+ * @Description: In User Settings Edit
+ * @FilePath: \yan-utils\src\smoothscroll.js
  */
+
 
 let requestAnimationFrame = (function () {
   return (

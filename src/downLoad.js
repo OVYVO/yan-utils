@@ -3,7 +3,7 @@
  * @param {String} href
  * @param {String} name
  */
-const download = function(href, name) {
+const download = function (href, name) {
   const a = document.createElement("a");
   a.download = name;
   a.style.display = "none";
@@ -18,7 +18,7 @@ const download = function(href, name) {
  * @param {Blob} blob
  * @param {String} name
  */
-const downloadBlob = function(blob, name) {
+const downloadBlob = function (blob, name) {
   const href = URL.createObjectURL(blob);
   download(href, name);
 }
@@ -28,7 +28,7 @@ const downloadBlob = function(blob, name) {
  * @param {String} str
  * @param {String} name
  */
-const downloadStr = function(str, name = `${Date.now()}.txt`) {
+const downloadStr = function (str, name = `${Date.now()}.txt`) {
   const blob = new Blob([str]);
   downloadBlob(blob, name);
 }
@@ -38,11 +38,11 @@ const downloadStr = function(str, name = `${Date.now()}.txt`) {
  * @param {String} src
  * @param {String} name
  */
-const downloadImage = function(src, name = `${Date.now()}.png`) {
+const downloadImage = function (src, name = `${Date.now()}.png`) {
   const image = new Image();
   image.setAttribute("crossOrigin", "anonymous");
   image.src = src;
-  image.onload = function() {
+  image.onload = function () {
     const canvas = document.createElement("canvas");
     canvas.width = image.width;
     canvas.height = image.height;
