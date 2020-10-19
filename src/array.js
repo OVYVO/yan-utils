@@ -1,7 +1,7 @@
 /*
  * @Author: yangang
  * @Date: 2020-09-19 18:15:00
- * @LastEditTime: 2020-09-22 22:08:09
+ * @LastEditTime: 2020-10-19 09:25:20
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \yan-utils\src\array.js
@@ -59,4 +59,10 @@ const arrayRandom = function (arr) {
   return randomArr;
 };
 
-export default { arrayIntersect, arrayDiffer, arrayUnique, arrayFlat, arrayRandom };
+export default {
+  arrayIntersect,
+  arrayDiffer,
+  arrayUnique,
+  arrayFlat,
+  arrayRandom
+};
