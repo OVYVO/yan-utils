@@ -16,15 +16,17 @@ import validate from './validate';
 import smoothScroll from './smoothscroll';
 import numTransform from './numTransform'
 import downLoad from './downLoad'
+import localUtils from './localData'
 
 export default {
-    ...array,
-    ...deepclone,
-    ...object,
-    ...copy,
-    ...rem,
-    ...validate,
-    ...smoothScroll,
-    ...numTransform,
-    ...downLoad
+  ...array,
+  ...deepclone,
+  ...object,
+  ...copy,
+  ...rem,
+  ...validate,
+  ...smoothScroll,
+  ...numTransform,
+  ...downLoad,
+  ...localUtils
 };
