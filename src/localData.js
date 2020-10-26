@@ -4,7 +4,7 @@
  * @param value{string}
  * @param maxAge{number} 分钟 (默认7天)
  */
-export function setLocalData(key, value, maxAge = 60 * 24 * 7) {
+const setLocalData = function (key, value, maxAge = 60 * 24 * 7) {
   const data = {
     value,
     maxAge: maxAge * 60000,
@@ -17,7 +17,7 @@ export function setLocalData(key, value, maxAge = 60 * 24 * 7) {
  * 获取本地localData
  * @param key{string}
  */
-export function getLocalData(key) {
+const getLocalData = function (key) {
   try {
     const dataStr = localStorage.getItem(key)
     if (!dataStr) return null
@@ -35,16 +35,16 @@ export function getLocalData(key) {
  * 删除本地localData
  * @param key{string}
  */
-export function clearLocalData(key) {
+const clearLocalData = function (key) {
   localStorage.remove(key)
 }
 
 /**
- * 创建localStorage缓存,用于用户信息
+ * 创建localStorage缓存
  * @param key{string}
  * @param maxAge{number} 分钟 (默认1天)
  */
-export function createCache(key, maxAge = 60 * 24) {
+const createCache = function (key, maxAge = 60 * 24) {
   return {
     get() {
       return getLocalData(key)
