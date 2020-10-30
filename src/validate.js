@@ -35,6 +35,16 @@ const isIdCard = function (str) {
 const isEmail = function (str) {
   return /\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*/.test(str);
 };
+// 判断是否全等
+const isEquals = function () {
+  if (a === b) return true;
+  if (a instanceof Date && b instanceof Date) return a.getTime() === b.getTime();
+  if (!a || !b || (typeof a !== 'object' && typeof b !== 'object')) return a === b;
+  if (a.prototype !== b.prototype) return false;
+  let keys = Object.keys(a);
+  if (keys.length !== Object.keys(b).length) return false;
+  return keys.every(k => equals(a[k], b[k]));
+}
 
 export default {
   isPC,
@@ -42,4 +52,5 @@ export default {
   isIphoneX,
   isIdCard,
   isEmail,
+  isEquals
 };

@@ -1,11 +1,3 @@
-/*
- * @Author: your name
- * @Date: 2020-09-23 20:41:16
- * @LastEditTime: 2020-10-18 09:41:52
- * @LastEditors: your name
- * @Description: In User Settings Edit
- * @FilePath: \yan-utils\src\object.js
- */
 /**
  * @description: 判断对象是否为空
  * @param {object}
