@@ -8,7 +8,6 @@
  * @Sync ID:55cc23ad57f0dcfd7381f4c56b7588a5
  */
 import array from './array';
-import deepclone from './deepclone';
 import object from './object';
 import copy from './copy';
 import rem from './rem';
@@ -17,14 +16,13 @@ import smoothScroll from './smoothscroll';
 import num from './num'
 import downLoad from './downLoad'
 import localStorage from './localStorage'
-import url from './url'
+import browser from './browser'
 import time from './time'
 
 export default {
   ...array,
   ...num,
   ...time,
-  ...deepclone,
   ...object,
   ...copy,
   ...rem,
@@ -32,5 +30,5 @@ export default {
   ...smoothScroll,
   ...downLoad,
   ...localStorage,
-  ...url
+  ...browser
 };
