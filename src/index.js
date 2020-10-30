@@ -14,20 +14,22 @@ import copy from './copy';
 import rem from './rem';
 import validate from './validate';
 import smoothScroll from './smoothscroll';
-import numTransform from './numTransform'
+import num from './num'
 import downLoad from './downLoad'
 import localStorage from './localStorage'
 import url from './url'
+import time from './time'
 
 export default {
   ...array,
+  ...num,
+  ...time,
   ...deepclone,
   ...object,
   ...copy,
   ...rem,
   ...validate,
   ...smoothScroll,
-  ...numTransform,
   ...downLoad,
   ...localStorage,
   ...url

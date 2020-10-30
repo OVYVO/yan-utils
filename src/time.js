@@ -12,7 +12,7 @@ const dayOfYear = function (date = new Date()) {
  * @params new Date()
  * @return Number
  */
-const getColonTimeFromDate = function (date = new Date()) {
+const getTimeNow = function (date = new Date()) {
   return date.toTimeString().slice(0, 8)
 };
 
@@ -21,7 +21,7 @@ const getColonTimeFromDate = function (date = new Date()) {
  * @params Array
  * @return Number
  */
-const getDaysDiffBetweenDates = function (dateOne, dateTwo) {
+const getBetweenDate = function (dateOne, dateTwo) {
   if (!dateOne || !dateTwo) return console.log('请输入正确时间')
   let dateOneTime = new Date(dataOne)
   let dateTwoTime = new Date(dateTwo)
@@ -56,11 +56,17 @@ const isBeforeDate = function (dateOne, dateTwo) {
  * @return {String}
  */
 
-const tomorrow = function () {
+const getTimeTomorrow = function () {
   let t = new Date();
   t.setDate(t.getDate() + 1);
   return t.toISOString().split('T')[0];
 };
 
-console.log(tomorrow())
-//export default { dayOfYear }
+export default {
+  dayOfYear,
+  getTimeNow,
+  getTimeTomorrow,
+  getBetweenDate,
+  isAfterDate,
+  isBeforeDate
+}

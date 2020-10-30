@@ -1,12 +1,3 @@
-/*
- * @Author: yangang
- * @Date: 2020-09-19 18:15:00
- * @LastEditTime: 2020-09-22 22:08:09
- * @LastEditors: Please set LastEditors
- * @Description: In User Settings Edit
- */
-
-
 let chnUnitSection = ["", "万", "亿", "万亿", "亿亿"];
 
 const SectionToChinese = function (section) {
@@ -34,7 +25,11 @@ const SectionToChinese = function (section) {
   }
   return chnStr;
 }
-
+/**
+ * @desc 阿拉伯数字转中文
+ * @params 
+ * @return Number
+ */
 const NumberToChinese = function (num) {
   let unitPos = 0;
   let strIns = '',
@@ -60,6 +55,11 @@ const NumberToChinese = function (num) {
   return chnStr;
 }
 
+/**
+ * @desc 中文数字转阿拉伯
+ * @params 
+ * @return Number
+ */
 const ChineseToNumber = function (chnStr) {
   let chnNumChar = {
     '零': 0,
@@ -124,7 +124,37 @@ const ChineseToNumber = function (chnStr) {
   return rtn + section;
 }
 
+/**
+ * @desc 四舍五入到指定位数
+ * @params 
+ * @return Number
+ */
+const roundToDigit = function (num, digit) {
+  return Number(`${Math.round(`${num}e${digit}`)}e-${digit}`);
+}
+
+/**
+ * @desc 生成指定范围内的随机整数
+ * @params 
+ * @return Number
+ */
+const randomIntegerInRange = function (numOne, numTwo) {
+  return Math.floor(Math.random() * (Math.max(numOne, numTwo) - Math.min(numOne, numTwo) + 1)) + Math.min(numOne, numTwo);
+}
+
+/**
+ * @desc 生成指定范围的随机小数
+ * @params 
+ * @return Number
+ */
+const randomFloatInRange = function (numOne, numTwo) {
+  return Math.random() * (Math.max(numOne, numTwo) - Math.min(numOne, numTwo)) + Math.min(numOne, numTwo);
+}
+
 export default ({
   NumberToChinese,
-  ChineseToNumber
+  ChineseToNumber,
+  roundToDigit,
+  randomIntegerInRange,
+  randomFloatInRange
 })
