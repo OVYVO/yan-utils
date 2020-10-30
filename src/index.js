@@ -16,7 +16,8 @@ import validate from './validate';
 import smoothScroll from './smoothscroll';
 import numTransform from './numTransform'
 import downLoad from './downLoad'
-import localStorage from './localData'
+import localStorage from './localStorage'
+import url from './url'
 
 export default {
   ...array,
@@ -28,5 +29,6 @@ export default {
   ...smoothScroll,
   ...numTransform,
   ...downLoad,
-  ...localStorage
+  ...localStorage,
+  ...url
 };
