@@ -1,12 +1,3 @@
-/*
- * @Author: yangang
- * @Date: 2020-09-22 21:47:35
- * @LastEditTime: 2020-09-22 22:07:58
- * @LastEditors: Please set LastEditors
- * @Description: In User Settings Edit
- * @FilePath: \yan-utils\src\validate.js
- */
-
 let userAgent = '';
 if (typeof navigator !== 'undefined') {
   userAgent = navigator.userAgent.toLowerCase();

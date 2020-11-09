@@ -1,12 +1,3 @@
-/*
- * @Author: yangang
- * @Date: 2020-09-22 21:39:09
- * @LastEditTime: 2020-09-22 22:09:58
- * @LastEditors: Please set LastEditors
- * @Description: In User Settings Edit
- * @FilePath: \yan-utils\src\copy.js
- */
-
 /**
  * @description: 复制至粘贴板
  * @param {String}
