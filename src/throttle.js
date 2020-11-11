@@ -3,7 +3,7 @@
  * @params 
  * @return function
  */
-function throttle(fn, wait) {
+export function throttle(fn, wait) {
   if (typeof fn !== "function") {
     throw new Error("必须传入一个函数作为参数");
   }
