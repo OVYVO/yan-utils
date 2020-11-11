@@ -4,6 +4,9 @@
  * @return function
  */
 function throttle(fn, wait) {
+  if (typeof fn !== "function") {
+    throw new Error("必须传入一个函数作为参数");
+  }
   let time = 0
   let timer = null
   return function () {

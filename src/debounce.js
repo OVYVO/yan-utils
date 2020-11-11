@@ -5,6 +5,9 @@
  */
 
 export function debounce(fn, wait) {
+  if (typeof fn !== "function") {
+    throw new Error("必须传入一个函数作为参数");
+  }
   let timer = null
   return function () {
     let args = arguments
