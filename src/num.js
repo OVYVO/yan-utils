@@ -1,12 +1,11 @@
 let chnUnitSection = ["", "万", "亿", "万亿", "亿亿"];
-
+let chnNumChar = ["零", "一", "二", "三", "四", "五", "六", "七", "八", "九"];
+let chnUnitChar = ["", "十", "百", "千"];
 const SectionToChinese = function (section) {
-  let strIns = '',
-    chnStr = '';
+  let strIns = '';
+  let chnStr = '';
   let unitPos = 0;
   let zero = true;
-  let chnNumChar = ["零", "一", "二", "三", "四", "五", "六", "七", "八", "九"];
-  let chnUnitChar = ["", "十", "百", "千"];
   while (section > 0) {
     let v = section % 10;
     if (v === 0) {
@@ -32,14 +31,10 @@ const SectionToChinese = function (section) {
  */
 const NumberToChinese = function (num) {
   let unitPos = 0;
-  let strIns = '',
-    chnStr = '';
+  let strIns = '';
+  let chnStr = '';
   let needZero = false;
-
-  if (num === 0) {
-    return chnNumChar[0];
-  }
-
+  if (num === 0) return chnNumChar[0];
   while (num > 0) {
     let section = num % 10000;
     if (needZero) {
@@ -52,6 +47,7 @@ const NumberToChinese = function (num) {
     num = Math.floor(num / 10000);
     unitPos++;
   }
+  chnStr = chnStr.replace(/^一十/g, '十');
   return chnStr;
 }
 
