@@ -30,13 +30,14 @@ const SectionToChinese = function (section) {
  * @return Number
  */
 const NumberToChinese = function (num) {
+  let num_copy = num
   let unitPos = 0;
   let strIns = '';
   let chnStr = '';
   let needZero = false;
-  if (num === 0) return chnNumChar[0];
-  while (num > 0) {
-    let section = num % 10000;
+  if (num_copy === 0) return chnNumChar[0];
+  while (num_copy > 0) {
+    let section = num_copy % 10000;
     if (needZero) {
       chnStr = chnNumChar[0] + chnStr;
     }
@@ -44,14 +45,15 @@ const NumberToChinese = function (num) {
     strIns += (section !== 0) ? chnUnitSection[unitPos] : chnUnitSection[0];
     chnStr = strIns + chnStr;
     needZero = (section < 1000) && (section > 0);
-    num = Math.floor(num / 10000);
+    num_copy = Math.floor(num_copy / 10000);
     unitPos++;
   }
-
-  chnStr = chnStr.replace(/^一十/g, '十');
-  return chnStr;
+  if (num >= 10 && num < 20) {
+    return chnStr.replace(/^一十/g, '十');
+  } else {
+    return chnStr;
+  }
 }
-
 /**
  * @desc 中文数字转阿拉伯
  * @params 
