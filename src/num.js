@@ -47,6 +47,7 @@ const NumberToChinese = function (num) {
     num = Math.floor(num / 10000);
     unitPos++;
   }
+
   chnStr = chnStr.replace(/^一十/g, '十');
   return chnStr;
 }
