@@ -47,6 +47,30 @@ import { xxx } from 'yan-utils/lib/array.js';
 4. 生成指定范围的随机整数 randomIntegerInRange(num1,num2)
 5. 生成指定范围的随机小数 randomFloatInRange(num1,num2)
 
+###### time.js
+
+1. 获取日期在本年的天数 dayOfYear(date)
+2. 获取时间的 24 小时制字符串 getTimeNow(str)
+3. 获取时间区间的天数 getBetweenDate(date1,date2)
+4. 检查某日期是否在某日期之后 isAfterDate(date1,date2)
+5. 检查某日期是否在某日期之前 isBeforeDate(date1,date2)
+6. 获取明天的字符串格式时间 getTimeTomorrow()
+
+###### validate.js
+
+1. 是否是 PC 端 isPC()
+2. 手机号码正则 isPhone()
+3. 判断是否是 iphonex isIphoneX()
+4. 判断是身份证号是否正确 isRightIdCard(str)
+5. 判断邮箱是否正确 isRightEmail(str)
+6. 判断是否全等 isEquals()
+7. 判断是否是字符串 isString(str)
+8. 判断是否是对象 isObject(obj)
+9. 判断是否是 Dom isHtmlElement(node)
+10. 判断是否是函数 isString(fn)
+11. 判断是否是 undefined isUndefined(val)
+12. 判断是否是 defined isDefined(val)
+
 ###### 翻页类使用方法:
 
 ```javascript
