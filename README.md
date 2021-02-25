@@ -21,11 +21,31 @@ import { xxx } from 'yan-utils/lib/array.js';
 
 ###### array.js
 
-1.数组取交集 arrayIntersect(arr1,arr2); 2.数组取差集 arrayDiffer(arr1,arr2); 3.数组去重 arrayUnique(arr); 4.数组平铺 arrayFlat(arr); 5.数组项随机获取 arrayRandom(arr);
+1. 数组取交集 arrayIntersect(arr1,arr2)
+2. 数组取差集 arrayDiffer(arr1,arr2)
+3. 数组去重 arrayUnique(arr)
+4. 数组平铺 arrayFlat(arr)
+5. 数组项随机获取 arrayRandom(arr);
 
 ###### browser.js
 
-1.浏览器 url 参数转对象 parseQueryString(url) 2.对象转浏览器 url stringifyQueryString(obj)
+1. 浏览器 url 参数转对象 parseQueryString(url)
+2. 对象转浏览器 url stringifyQueryString(obj)
+
+###### download.js
+
+1. 普通下载 download()
+2. 下载 blob 对象 downloadBlob()
+3. 下载文字 downloadStr()
+4. 下载图片 downloadImage()
+
+###### num.js
+
+1. 阿拉伯数字转中文 NumberToChinese(num)
+2. 中文转阿拉伯数字 ChineseToNumber(str)
+3. 四舍五入到指定位数 roundToDigit(num,digit)
+4. 生成指定范围的随机整数 randomIntegerInRange(num1,num2)
+5. 生成指定范围的随机小数 randomFloatInRange(num1,num2)
 
 ###### 翻页类使用方法:
 
