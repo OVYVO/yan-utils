@@ -19,6 +19,14 @@ import { xxx } from 'yan-utils/lib/array.js';
 
 ##### 用例
 
+###### array.js
+
+1.数组取交集 arrayIntersect(arr1,arr2); 2.数组取差集 arrayDiffer(arr1,arr2); 3.数组去重 arrayUnique(arr); 4.数组平铺 arrayFlat(arr); 5.数组项随机获取 arrayRandom(arr);
+
+###### browser.js
+
+1.浏览器 url 参数转对象 parseQueryString(url) 2.对象转浏览器 url stringifyQueryString(obj)
+
 ###### 翻页类使用方法:
 
 ```javascript

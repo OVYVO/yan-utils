@@ -38,7 +38,7 @@ const arrayUnique = function (arr) {
 };
 
 /**
- * @description: 快速打平数组
+ * @description: 数组平铺
  * @param {array}
  * @return {array}
  */

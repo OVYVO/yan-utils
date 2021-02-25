@@ -36,6 +36,32 @@ const isEquals = function () {
   if (keys.length !== Object.keys(b).length) return false;
   return keys.every(k => equals(a[k], b[k]));
 }
+//判断是否是字符串
+const isString = function (obj) {
+  return Object.prototype.toString.call(obj) === '[object String]';
+}
+//判断是否是对象
+const isObject = function (obj) {
+  return Object.prototype.toString.call(obj) === '[object Object]';
+}
+//判断是否是Dom
+const isHtmlElement = function (node) {
+  return node && node.nodeType === Node.ELEMENT_NODE;
+}
+//判断是否是function
+const isFunction = function (functionToCheck) {
+  var getType = {};
+  return functionToCheck && getType.toString.call(functionToCheck) === '[object Function]';
+};
+//判断是否是undefined
+const isUndefined = function (val) {
+  return val === void 0;
+};
+//判断是否是defined
+const isDefined = function (val) {
+  return val !== undefined && val !== null;
+};
+
 
 export default {
   isPC,
@@ -43,5 +69,11 @@ export default {
   isIphoneX,
   isIdCard,
   isEmail,
-  isEquals
+  isEquals,
+  isString,
+  isObject,
+  isHtmlElement,
+  isFunction,
+  isUndefined,
+  isDefined
 };
