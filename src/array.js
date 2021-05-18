@@ -44,7 +44,7 @@ const arrayUnique = function (arr) {
  */
 const arrayFlat = function (arr) {
   const flatArr = arr.reduce((pre, value) => {
-    return Array.isArray(value) ? [...pre, ...flat(value)] : [...pre, value];
+    return Array.isArray(value) ? [...pre, ...arrayFlat(value)] : [...pre, value];
   }, []);
   return flatArr;
 };
