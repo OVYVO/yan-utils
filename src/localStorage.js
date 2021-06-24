@@ -44,6 +44,7 @@ const clearLocalData = function (key) {
  * @param key{string}
  * @param maxAge{number} 分钟 (默认1天)
  */
+const localStorage = window.localStorage
 const createCache = function (key, maxAge = 60 * 24) {
   return {
     get() {
