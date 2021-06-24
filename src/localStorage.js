@@ -36,7 +36,7 @@ const getLocalData = function (key) {
  * @param key{string}
  */
 const clearLocalData = function (key) {
-  localStorage.remove(key)
+  localStorage.removeItem(key)
 }
 
 /**
