@@ -1,4 +1,4 @@
-const localStorage = window.localStorage
+import localStorage from './localStorage'
 // 格式化参数
 const formatParams = (data)=>{
   let arr=[];
@@ -38,29 +38,6 @@ const ajax = (options = {})=>{
     }
   }
 }
-// localStorage存值
-const setLocalData = (key, value, maxAge = 60 * 24 * 7)=> {
-  const data = {
-    value,
-    maxAge: maxAge * 60000,
-    timestamp: Date.now(),
-  }
-  localStorage.setItem(key, JSON.stringify(data))
-}
-// localStorage取值
-const getLocalData = (key)=> {
-  try {
-    const dataStr = localStorage.getItem(key)
-    if (!dataStr) return null
-    const { value, maxAge, timestamp } = JSON.parse(dataStr)
-    const data = maxAge + timestamp > Date.now() ? value : null
-    if (!data) localStorage.removeItem(key)
-    return data
-  } catch (e) {
-    localStorage.removeItem(key)
-    return null
-  }
-}
 // 获取cookie值
 const getCookie = (key) => {
   const cookieArray = window.document.cookie.replace(/\s/g, "").split(';')
@@ -86,9 +63,9 @@ class dataMonitor{
   init(obj){
     window.dataMonitor = obj
     console.log('DataMonitor is runing')
-    setLocalData('monitordata',[])
+    localStorage.setLocalData('monitordata',[])
     setInterval(()=>{
-      const payload = getLocalData('monitordata')
+      const payload = localStorage.getLocalData('monitordata')
       this.dataReport(payload)
     },this.reportTime)
   }
@@ -104,7 +81,7 @@ class dataMonitor{
       contentType: "application/json",
       success:()=>{
         // 上报成功，清空事件栈数据
-        setLocalData('monitordata',[])
+        localStorage.setLocalData('monitordata',[])
       },
       error:(e)=>{
         console.log(e);
@@ -118,9 +95,9 @@ class dataMonitor{
       s_token: getCookie('s_token') || '',
       parm: {...params}
     }
-    let monitordataCopy = getLocalData('monitordata') || []
+    let monitordataCopy = localStorage.getLocalData('monitordata') || []
     monitordataCopy.push(eventItem)
-    setLocalData('monitordata',monitordataCopy)
+    localStorage.setLocalData('monitordata',monitordataCopy)
   }
 }
 
