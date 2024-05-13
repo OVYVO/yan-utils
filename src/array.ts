@@ -33,7 +33,7 @@ function unique<T>(arr: T[]): T[] {
  * @param nestedArray 嵌套的数组。
  * @returns 返回一个一维数组，其中嵌套数组的所有元素都被展平。
  */
-function flatten<T>(nestedArray: (T | T[])[]): T[] {
+function flatten<T>(nestedArray: T[]): T[] {
   return nestedArray.reduce(
     (acc: T[], item) =>
       Array.isArray(item) ? acc.concat(flatten(item)) : acc.concat(item),
