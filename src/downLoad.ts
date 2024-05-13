@@ -43,7 +43,7 @@ export const downFileFromBlob = (blob: Blob, fileName: string): void => {
   document.body.removeChild(a); // 清理DOM
 };
 
-export default {
-  downloadFileFromUrl,
-  downFileFromBlob,
-};
+// export default {
+//   downloadFileFromUrl,
+//   downFileFromBlob,
+// };

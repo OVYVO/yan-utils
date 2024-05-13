@@ -1,21 +1,19 @@
-import array from "./array";
-import browser from "./browser";
-import copy from "./copy";
-import downLoad from "./downLoad";
-import localStorage from "./localStorage";
-import transform from "./transform";
-import is from "./is";
-import qnUpload from "./qnUpload";
-
-console.log(array);
+import * as array from "./array";
+import * as browser from "./browser";
+import * as copy from "./copy";
+import * as downLoad from "./downLoad";
+import * as localStorage from "./localStorage";
+import * as transform from "./transform";
+import * as is from "./is";
+import * as qnUpload from "./qnUpload";
 
 export default {
-  array,
-  browser,
-  copy,
-  downLoad,
-  localStorage,
-  transform,
-  is,
-  qnUpload,
+  ...array,
+  ...browser,
+  ...copy,
+  ...downLoad,
+  ...localStorage,
+  ...transform,
+  ...is,
+  ...qnUpload,
 };

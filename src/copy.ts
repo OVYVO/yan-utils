@@ -34,6 +34,6 @@ export const copyToClipboardCompatible = async (
   return false; // 如果以上方法都失败
 };
 
-export default {
-  copyToClipboardCompatible,
-};
+// export default {
+//   copyToClipboardCompatible,
+// };

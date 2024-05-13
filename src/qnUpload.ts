@@ -71,6 +71,6 @@ export const qnUpload = (
   });
 };
 
-export default {
-  qnUpload,
-};
+// export default {
+//   qnUpload,
+// };
