@@ -4,36 +4,36 @@
  * @param type 指定的类型字符串。
  * @returns 如果值是指定类型的对象，则返回true，否则返回false。
  */
-function is(val: unknown, type: string) {
+export const is = (val: unknown, type: string) => {
   return Object.prototype.toString.call(val) === `[object ${type}]`;
-}
+};
 
 /**
  * 检查一个值是否定义。
  * @param val 可能未定义的值。
  * @returns 如果值已定义，则返回true，否则返回false。
  */
-function isDef<T = unknown>(val?: T): val is T {
+export const isDef = <T = unknown>(val?: T): val is T => {
   return typeof val !== "undefined";
-}
+};
 
 /**
  * 检查一个值是否未定义。
  * @param val 可能未定义的值。
  * @returns 如果值未定义，则返回true，否则返回false。
  */
-function isUnDef<T = unknown>(val?: T): val is T {
+export const isUnDef = <T = unknown>(val?: T): val is T => {
   return !isDef(val);
-}
+};
 
 /**
  * 检查一个值是否为对象（不包括null）。
  * @param val 待检查的值。
  * @returns 如果值是对象，则返回true，否则返回false。
  */
-function isObject(val: any): val is Record<any, any> {
+export const isObject = (val: any): val is Record<any, any> => {
   return val !== null && is(val, "Object");
-}
+};
 
 /**
  * 检查一个值是否为空。
@@ -41,7 +41,7 @@ function isObject(val: any): val is Record<any, any> {
  * @param val 待检查的值。
  * @returns 如果值为空，则返回true，否则返回false。
  */
-function isEmpty<T = unknown>(val: T): val is T {
+export const isEmpty = <T = unknown>(val: T): val is T => {
   if (isArray(val) || isString(val)) {
     return val.length === 0;
   }
@@ -55,157 +55,135 @@ function isEmpty<T = unknown>(val: T): val is T {
   }
 
   return false;
-}
+};
 
 /**
  * 检查一个值是否为Date对象。
  * @param val 待检查的值。
  * @returns 如果值是Date对象，则返回true，否则返回false。
  */
-function isDate(val: unknown): val is Date {
+export const isDate = (val: unknown): val is Date => {
   return is(val, "Date");
-}
+};
 
 /**
  * 检查一个值是否为null。
  * @param val 待检查的值。
  * @returns 如果值为null，则返回true，否则返回false。
  */
-function isNull(val: unknown): val is null {
+export const isNull = (val: unknown): val is null => {
   return val === null;
-}
+};
 
 /**
  * 检查一个值是否为null或undefined。
  * @param val 待检查的值。
  * @returns 如果值为null或undefined，则返回true，否则返回false。
  */
-function isNullAndUnDef(val: unknown): val is null | undefined {
+export const isNullAndUnDef = (val: unknown): val is null | undefined => {
   return isUnDef(val) && isNull(val);
-}
+};
 
 /**
  * 检查一个值是否为null或undefined。
  * @param val 待检查的值。
  * @returns 如果值为null或undefined，则返回true，否则返回false。
  */
-function isNullOrUnDef(val: unknown): val is null | undefined {
+export const isNullOrUnDef = (val: unknown): val is null | undefined => {
   return isUnDef(val) || isNull(val);
-}
+};
 
 /**
  * 检查一个值是否为数字。
  * @param val 待检查的值。
  * @returns 如果值为数字，则返回true，否则返回false。
  */
-function isNumber(val: unknown): val is number {
+export const isNumber = (val: unknown): val is number => {
   return is(val, "Number");
-}
+};
 
 /**
  * 检查一个值是否为Promise对象。
  * @param val 待检查的值。
  * @returns 如果值为Promise对象，则返回true，否则返回false。
  */
-function isPromise<T = any>(val: unknown): val is Promise<T> {
+export const isPromise = <T = any>(val: unknown): val is Promise<T> => {
   return (
     is(val, "Promise") &&
     isObject(val) &&
     isFunction(val.then) &&
     isFunction(val.catch)
   );
-}
+};
 
 /**
  * 检查一个值是否为字符串。
  * @param val 待检查的值。
  * @returns 如果值为字符串，则返回true，否则返回false。
  */
-function isString(val: unknown): val is string {
+export const isString = (val: unknown): val is string => {
   return is(val, "String");
-}
+};
 
 /**
  * 检查一个值是否为函数。
  * @param val 待检查的值。
  * @returns 如果值为函数，则返回true，否则返回false。
  */
-function isFunction(val: unknown): val is Function {
+export const isFunction = (val: unknown): val is Function => {
   return typeof val === "function";
-}
+};
 
 /**
  * 检查一个值是否为布尔值。
  * @param val 待检查的值。
  * @returns 如果值为布尔值，则返回true，否则返回false。
  */
-function isBoolean(val: unknown): val is boolean {
+export const isBoolean = (val: unknown): val is boolean => {
   return is(val, "Boolean");
-}
+};
 
 /**
  * 检查一个值是否为正则表达式。
  * @param val 待检查的值。
  * @returns 如果值为正则表达式，则返回true，否则返回false。
  */
-function isRegExp(val: unknown): val is RegExp {
+export const isRegExp = (val: unknown): val is RegExp => {
   return is(val, "RegExp");
-}
+};
 
 /**
  * 检查一个值是否为数组。
  * @param val 待检查的值。
  * @returns 如果值为数组，则返回true，否则返回false。
  */
-function isArray(val: any): val is Array<any> {
+export const isArray = (val: any): val is Array<any> => {
   return val && Array.isArray(val);
-}
+};
 
 /**
  * 检查一个值是否为Window对象。
  * @param val 待检查的值。
  * @returns 如果值为Window对象，则返回true，否则返回false。
  */
-function isWindow(val: any): val is Window {
+export const isWindow = (val: any): val is Window => {
   return typeof window !== "undefined" && is(val, "Window");
-}
+};
 
 /**
  * 检查一个值是否为HTML或XML元素。
  * @param val 待检查的值。
  * @returns 如果值为元素，则返回true，否则返回false。
  */
-function isElement(val: unknown): val is Element {
+export const isElement = (val: unknown): val is Element => {
   return isObject(val) && !!val.tagName;
-}
+};
 
 /**
  * 检查一个值是否为Map对象。
  * @param val 待检查的值。
  * @returns 如果值为Map对象，则返回true，否则返回false。
  */
-function isMap(val: unknown): val is Map<any, any> {
+export const isMap = (val: unknown): val is Map<any, any> => {
   return is(val, "Map");
-}
-
-export default {
-  is,
-  isDef,
-  isUnDef,
-  isObject,
-  isEmpty,
-  isDate,
-  isNull,
-  isNullAndUnDef,
-  isNullOrUnDef,
-  isNumber,
-  isPromise,
-  isString,
-  isFunction,
-  isBoolean,
-  isRegExp,
-  isArray,
-  isWindow,
-  isElement,
-  isMap,
 };

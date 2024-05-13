@@ -3,7 +3,9 @@
  * @param text 要复制的文本。
  * @returns 若复制成功则返回`true`，否则返回`false`。
  */
-async function copyToClipboardCompatible(text: string): Promise<boolean> {
+export const copyToClipboardCompatible = async (
+  text: string
+): Promise<boolean> => {
   if (navigator.clipboard && navigator.clipboard.writeText) {
     // 尝试使用 Clipboard API
     try {
@@ -30,8 +32,4 @@ async function copyToClipboardCompatible(text: string): Promise<boolean> {
     }
   }
   return false; // 如果以上方法都失败
-}
-
-export default {
-  copyToClipboardCompatible,
 };

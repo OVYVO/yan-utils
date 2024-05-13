@@ -4,7 +4,7 @@
  * @returns 返回一个填充好的 FormData 实例。
  * @throws 如果传入的参数不是对象或者为 null，则抛出错误。
  */
-function getFormData<T extends { [key: string]: any }>(object: T) {
+export const getFormData = <T extends { [key: string]: any }>(object: T) => {
   if (typeof object !== "object" || object === null) {
     throw new Error("Expected an object as parameter");
   }
@@ -21,7 +21,7 @@ function getFormData<T extends { [key: string]: any }>(object: T) {
     }
   });
   return formData;
-}
+};
 
 /**
  * 将Blob对象转换为File对象。
@@ -30,11 +30,11 @@ function getFormData<T extends { [key: string]: any }>(object: T) {
  * @param type 可选，文件类型（MIME类型）。如果未提供，则默认为空字符串。
  * @returns 返回创建的File对象，如果输入参数不合法，则返回undefined。
  */
-function blobToFile(
+export const blobToFile = (
   blob: Blob,
   name: string,
   type: string = ""
-): File | undefined {
+): File | undefined => {
   // 参数校验
   if (!(blob instanceof Blob)) {
     console.error("blob参数必须是Blob类型");
@@ -56,14 +56,14 @@ function blobToFile(
     console.error("创建File对象时发生错误:", error);
     return undefined;
   }
-}
+};
 
 /**
  * 将阿拉伯数字转为中文数字。
  * @param num 阿拉伯数字。
  * @returns 返回中文数字字符串。
  */
-function arabicToChineseNumber(num: number): string {
+export const arabicToChineseNumber = (num: number): string => {
   if (num < 0) throw new Error("仅支持非负整数");
   const chineseNums = [
     "零",
@@ -125,10 +125,4 @@ function arabicToChineseNumber(num: number): string {
     .replace(/零+$/, "");
 
   return result;
-}
-
-export default {
-  getFormData,
-  blobToFile,
-  arabicToChineseNumber,
 };

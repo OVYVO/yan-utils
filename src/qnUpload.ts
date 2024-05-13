@@ -6,12 +6,12 @@
  * @param uploadtoken 七牛上传token
  */
 import * as qiniu from "qiniu-js";
-function qnUpload(
+export const qnUpload = (
   file: any,
   type = "image",
   domain: string,
   uploadtoken: string
-) {
+) => {
   return new Promise((resolve, reject) => {
     const options = { quality: 0.92, noCompressIfLarger: true };
     const config = {
@@ -69,8 +69,4 @@ function qnUpload(
       upload(file);
     }
   });
-}
-
-export default {
-  qnUpload,
 };

@@ -76,7 +76,7 @@ const storageUtils = {
   },
 };
 
-export default {
+export const ls = {
   get: storageUtils.get,
   set: storageUtils.set,
   remove: storageUtils.remove,

@@ -3,7 +3,7 @@
  * @param url 地址。
  * @param fileName 文件名。
  */
-function downloadFileFromUrl(url: string, fileName: string): void {
+export const downloadFileFromUrl = (url: string, fileName: string): void => {
   if (
     !url ||
     typeof url !== "string" ||
@@ -24,14 +24,14 @@ function downloadFileFromUrl(url: string, fileName: string): void {
     .catch((error) => {
       console.error("Error downloading file:", error);
     });
-}
+};
 
 /**
  * 下载Blob数据为文件。
  * @param blob Blob数据。
  * @param fileName 文件名。
  */
-function downFileFromBlob(blob: Blob, fileName: string): void {
+export const downFileFromBlob = (blob: Blob, fileName: string): void => {
   const url = window.URL.createObjectURL(blob);
   const a = document.createElement("a") as HTMLAnchorElement;
   a.style.display = "none";
@@ -41,9 +41,4 @@ function downFileFromBlob(blob: Blob, fileName: string): void {
   a.click();
   window.URL.revokeObjectURL(url); // 释放URL
   document.body.removeChild(a); // 清理DOM
-}
-
-export default {
-  downloadFileFromUrl,
-  downFileFromBlob,
 };
