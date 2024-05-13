@@ -4,9 +4,7 @@
   "description": "yan's utils",
   "main": "lib/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "webpack-dev-server --config webpack.config.js",
-    "build": "webpack --config webpack.config.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
     "yan-utils"
@@ -17,28 +15,11 @@
   ],
   "author": "vue12306@163.com",
   "license": "ISC",
-  "devDependencies": {
-    "@babel/core": "^7.12.0",
-    "@babel/plugin-proposal-class-properties": "^7.12.1",
-    "@babel/plugin-transform-runtime": "^7.12.0",
-    "@babel/preset-env": "^7.12.0",
-    "babel-loader": "^8.1.0",
-    "clean-webpack-plugin": "^3.0.0",
-    "html-webpack-plugin": "^4.5.0",
-    "webpack": "^4.44.2",
-    "webpack-cli": "^3.3.12",
-    "webpack-dev-server": "^3.11.0"
-  },
   "repository": {
     "type": "git",
     "url": "https://github.com/OVYVO/yan-utils.git"
   },
   "bugs": {
     "url": "https://github.com/OVYVO/yan-utils/issues"
-  },
-  "dependencies": {
-    "@babel/polyfill": "^7.12.1",
-    "@babel/runtime-corejs3": "^7.12.1",
-    "core-js": "^3.6.5"
   }
 }
