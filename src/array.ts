@@ -1,74 +1,49 @@
-/*
- * @Author: yangang
- * @Date: 2020-09-19 18:15:00
- * @LastEditTime: 2020-10-19 09:25:20
- * @LastEditors: Please set LastEditors
- * @Description: In User Settings Edit
- * @FilePath: \yan-utils\src\array.js
+/**
+ * 计算两个数组的交集。
+ * @param arr1 第一个数组。
+ * @param arr2 第二个数组。
+ * @returns 返回两个数组的交集，不包含重复元素。
  */
+function intersection<T>(arr1: T[], arr2: T[]): T[] {
+  const set1 = new Set(arr1);
+  return arr2.filter((item) => set1.has(item));
+}
+/**
+ * 计算两个数组的差集（第一个数组中独有的元素）。
+ * @param arr1 第一个数组。
+ * @param arr2 第二个数组。
+ * @returns 返回`arr1`中存在但`arr2`中不存在的元素组成的数组，不包含重复元素。
+ */
+function difference<T>(arr1: T[], arr2: T[]): T[] {
+  const set2 = new Set(arr2);
+  return arr1.filter((item) => !set2.has(item));
+}
 
 /**
- * @description: 数组取交集
- * @param {array}
- * @return {array}
+ * 移除数组中的重复元素。
+ * @param arr 要去重的数组。
+ * @returns 返回一个新的数组，包含原数组的所有非重复元素。
  */
-const arrayIntersect = function (arr_a: any[], arr_b: any[]): any[] {
-  const IntersectValues = [...new Set(arr_a)].filter((item) =>
-    arr_b.includes(item)
+function unique<T>(arr: T[]): T[] {
+  return Array.from(new Set(arr));
+}
+
+/**
+ * 平铺嵌套数组为一维数组。
+ * @param nestedArray 嵌套的数组。
+ * @returns 返回一个一维数组，其中嵌套数组的所有元素都被展平。
+ */
+function flatten<T>(nestedArray: (T | T[])[]): T[] {
+  return nestedArray.reduce(
+    (acc: T[], item) =>
+      Array.isArray(item) ? acc.concat(flatten(item)) : acc.concat(item),
+    []
   );
-  return IntersectValues;
-};
-
-/**
- * @description: 数组取差集
- * @param {array}
- * @return {array}
- */
-const arrayDiffer = function (arr_a: any[], arr_b: any[]): any[] {
-  const differValues = [...new Set([...arr_a, ...arr_b])].filter(
-    (item) => !arr_b.includes(item) || !arr_a.includes(item)
-  );
-  return differValues;
-};
-
-/**
- * @description: 数组去重
- * @param {array}
- * @return {array}
- */
-const arrayUnique = function (arr: any[]): any[] {
-  const uniqueArr = [...new Set(arr)];
-  return uniqueArr;
-};
-
-/**
- * @description: 数组平铺
- * @param {array}
- * @return {array}
- */
-const arrayFlat = function (arr: any[]): any[] {
-  const flatArr = arr.reduce((pre, value) => {
-    return Array.isArray(value)
-      ? [...pre, ...arrayFlat(value)]
-      : [...pre, value];
-  }, []);
-  return flatArr;
-};
-
-/**
- * @description: 随机获取数组项
- * @param {array}
- * @return {array}
- */
-const arrayRandom = function (arr: any[]): any[] {
-  const randomArr = arr[Math.floor(Math.random() * arr.length)];
-  return randomArr;
-};
+}
 
 export default {
-  arrayIntersect,
-  arrayDiffer,
-  arrayUnique,
-  arrayFlat,
-  arrayRandom,
+  intersection,
+  difference,
+  unique,
+  flatten,
 };
