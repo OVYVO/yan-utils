@@ -11,7 +11,7 @@ const download = function (href, name) {
   document.body.appendChild(a);
   a.click();
   document.body.removeChild(a);
-}
+};
 
 /**
  * @description: 下载blob对象
@@ -21,7 +21,7 @@ const download = function (href, name) {
 const downloadBlob = function (blob, name) {
   const href = URL.createObjectURL(blob);
   download(href, name);
-}
+};
 
 /**
  * @description: 下载文字
@@ -31,7 +31,7 @@ const downloadBlob = function (blob, name) {
 const downloadStr = function (str, name = `${Date.now()}.txt`) {
   const blob = new Blob([str]);
   downloadBlob(blob, name);
-}
+};
 
 /**
  * @description: 下载图片
@@ -54,11 +54,11 @@ const downloadImage = function (src, name = `${Date.now()}.png`) {
       download(href, name);
     }
   };
-}
+};
 
 export default {
   download,
   downloadBlob,
   downloadStr,
-  downloadImage
+  downloadImage,
 };

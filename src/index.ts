@@ -7,28 +7,26 @@
  * @FilePath: \yan-utils\src\index.js
  * @Sync ID:55cc23ad57f0dcfd7381f4c56b7588a5
  */
-import array from './array';
-import object from './object';
-import copy from './copy';
-import rem from './rem';
-import validate from './validate';
-import smoothScroll from './smoothscroll';
-import num from './num'
-import downLoad from './downLoad'
-import localStorage from './localStorage'
-import browser from './browser'
-import time from './time'
+import array from "./array";
+import object from "./object";
+import rem from "./rem";
+import validate from "./validate";
+import smoothScroll from "./smoothscroll";
+import num from "./num";
+import downLoad from "./downLoad";
+import localStorage from "./localStorage";
+import browser from "./browser";
+import time from "./time";
 
 export default {
   ...array,
   ...num,
   ...time,
   ...object,
-  ...copy,
   ...rem,
   ...validate,
   ...smoothScroll,
   ...downLoad,
   ...localStorage,
-  ...browser
+  ...browser,
 };

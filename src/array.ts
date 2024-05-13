@@ -12,8 +12,10 @@
  * @param {array}
  * @return {array}
  */
-const arrayIntersect = function (arr_a, arr_b) {
-  const IntersectValues = [...new Set(arr_a)].filter(item => arr_b.includes(item));
+const arrayIntersect = function (arr_a: any[], arr_b: any[]): any[] {
+  const IntersectValues = [...new Set(arr_a)].filter((item) =>
+    arr_b.includes(item)
+  );
   return IntersectValues;
 };
 
@@ -22,8 +24,10 @@ const arrayIntersect = function (arr_a, arr_b) {
  * @param {array}
  * @return {array}
  */
-const arrayDiffer = function (arr_a, arr_b) {
-  const differValues = [...new Set([...arr_a, ...arr_b])].filter(item => !arr_b.includes(item) || !arr_a.includes(item));
+const arrayDiffer = function (arr_a: any[], arr_b: any[]): any[] {
+  const differValues = [...new Set([...arr_a, ...arr_b])].filter(
+    (item) => !arr_b.includes(item) || !arr_a.includes(item)
+  );
   return differValues;
 };
 
@@ -32,7 +36,7 @@ const arrayDiffer = function (arr_a, arr_b) {
  * @param {array}
  * @return {array}
  */
-const arrayUnique = function (arr) {
+const arrayUnique = function (arr: any[]): any[] {
   const uniqueArr = [...new Set(arr)];
   return uniqueArr;
 };
@@ -42,9 +46,11 @@ const arrayUnique = function (arr) {
  * @param {array}
  * @return {array}
  */
-const arrayFlat = function (arr) {
+const arrayFlat = function (arr: any[]): any[] {
   const flatArr = arr.reduce((pre, value) => {
-    return Array.isArray(value) ? [...pre, ...arrayFlat(value)] : [...pre, value];
+    return Array.isArray(value)
+      ? [...pre, ...arrayFlat(value)]
+      : [...pre, value];
   }, []);
   return flatArr;
 };
@@ -54,7 +60,7 @@ const arrayFlat = function (arr) {
  * @param {array}
  * @return {array}
  */
-const arrayRandom = function (arr) {
+const arrayRandom = function (arr: any[]): any[] {
   const randomArr = arr[Math.floor(Math.random() * arr.length)];
   return randomArr;
 };
@@ -64,5 +70,5 @@ export default {
   arrayDiffer,
   arrayUnique,
   arrayFlat,
-  arrayRandom
+  arrayRandom,
 };

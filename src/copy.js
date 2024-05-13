@@ -3,14 +3,14 @@
  * @param {String}
  * @return {}}
  */
-const copy = input => {
-  const el = document.createElement('textarea');
+const copy = (input) => {
+  const el = document.createElement("textarea");
   el.value = input;
-  el.setAttribute('readonly', '');
-  el.style.contain = 'strict';
-  el.style.position = 'absolute';
-  el.style.left = '-9999px';
-  el.style.fontSize = '12pt';
+  el.setAttribute("readonly", "");
+  el.style.contain = "strict";
+  el.style.position = "absolute";
+  el.style.left = "-9999px";
+  el.style.fontSize = "12pt";
   const selection = document.getSelection();
   let originalRange = false;
   if (selection.rangeCount > 0) {
@@ -22,7 +22,7 @@ const copy = input => {
   el.selectionEnd = input.length;
   let success = false;
   try {
-    success = document.execCommand('copy');
+    success = document.execCommand("copy");
   } catch (err) {}
   document.body.removeChild(el);
   if (originalRange) {
