@@ -1,7 +1,9 @@
-const fs = require("fs");
-const path = require("path");
+// const fs = require("fs");
+// const path = require("path");
+import fs from "fs";
+import path from "path";
 
-const entry = (function getEntry() {
+export const entry = (function getEntry() {
   const collect = {};
   const prefix = path.resolve(__dirname, "../", "src"); //src文件夹
   function getFile(prefix) {
@@ -22,7 +24,3 @@ const entry = (function getEntry() {
   getFile(prefix);
   return collect;
 })();
-
-module.exports = {
-  entry,
-};

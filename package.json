@@ -4,7 +4,8 @@
   "description": "yan's utils",
   "main": "lib/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "rollup -c"
   },
   "keywords": [
     "yan-utils"
@@ -21,5 +22,14 @@
   },
   "bugs": {
     "url": "https://github.com/OVYVO/yan-utils/issues"
+  },
+  "devDependencies": {
+    "@types/node": "^20.12.11",
+    "rollup": "^4.17.2",
+    "tsc-alias": "^1.8.9",
+    "tslib": "^2.6.2"
+  },
+  "dependencies": {
+    "typescript": "^5.4.5"
   }
 }
