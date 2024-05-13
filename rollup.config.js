@@ -45,7 +45,7 @@ export default [
         entryFileNames: `[name].js`,
       },
     ],
-    plugins: [typescript(getTypescriptPluginConfig())],
+    plugins: [typescript(getTypescriptPluginConfig()), terser()],
     external: ["qiniu-js"],
   },
   {

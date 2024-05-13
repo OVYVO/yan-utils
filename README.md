@@ -1,6 +1,6 @@
 ###### yan-utils
 
-js 方法库
+> 🚀🚀🚀yan-utils 升级啦！！！新版本使用 typescript 重构了所有的方法，构建工具使用 rollup，相较 v1.x 版本，删除了一些并不常用的方法，同时也加入了一些新的方法。多种导出模式支持 umd,es,cjs 导入方式，打包体积更小。
 
 ###### 安装
 
@@ -8,11 +8,21 @@ js 方法库
 yarn add yan-utils
 # or
 npm i yan-utils -S
+# or
+pnpm add yan-utils
 ```
 
 ###### 引入
 
 ```js
-import xxx from "yan-utils";
-import { xxx } from "yan-utils/lib/array.js";
+//umd
+import { qnUpload } from "yan-utils";
+//es
+import { qnUpload } from "yan-utils/lib/es/qnUpload.js";
+//cjs
+const { qnUpload } = require("yan-utils/lib/cjs/qnUpload.js");
 ```
+
+###### 函数列表
+
+> 👽️👽️👽️ 太多了，就不一一列举

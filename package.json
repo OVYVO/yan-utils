@@ -1,12 +1,13 @@
 {
   "name": "yan-utils",
-  "version": "1.0.6",
+  "version": "2.0.0",
   "description": "yan's utils",
   "type": "module",
   "main": "lib/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "rimraf lib && rollup -c"
+    "build:test": "rimraf lib && rollup -c",
+    "build": "rollup -c"
   },
   "keywords": [
     "yan-utils"
