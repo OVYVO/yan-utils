@@ -42,3 +42,8 @@ export const downFileFromBlob = (blob: Blob, fileName: string): void => {
   window.URL.revokeObjectURL(url); // 释放URL
   document.body.removeChild(a); // 清理DOM
 };
+
+export default {
+  downloadFileFromUrl,
+  downFileFromBlob,
+};

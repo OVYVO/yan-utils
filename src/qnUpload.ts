@@ -70,3 +70,7 @@ export const qnUpload = (
     }
   });
 };
+
+export default {
+  qnUpload,
+};

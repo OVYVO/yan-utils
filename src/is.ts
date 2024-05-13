@@ -187,3 +187,25 @@ export const isElement = (val: unknown): val is Element => {
 export const isMap = (val: unknown): val is Map<any, any> => {
   return is(val, "Map");
 };
+
+export default {
+  is,
+  isDef,
+  isUnDef,
+  isObject,
+  isEmpty,
+  isDate,
+  isNull,
+  isNullAndUnDef,
+  isNullOrUnDef,
+  isNumber,
+  isPromise,
+  isString,
+  isFunction,
+  isBoolean,
+  isRegExp,
+  isArray,
+  isWindow,
+  isElement,
+  isMap,
+};

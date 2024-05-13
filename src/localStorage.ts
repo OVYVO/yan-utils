@@ -82,3 +82,7 @@ export const ls = {
   remove: storageUtils.remove,
   clear: storageUtils.clear,
 };
+
+export default {
+  ls,
+};

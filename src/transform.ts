@@ -126,3 +126,9 @@ export const arabicToChineseNumber = (num: number): string => {
 
   return result;
 };
+
+export default {
+  getFormData,
+  blobToFile,
+  arabicToChineseNumber,
+};

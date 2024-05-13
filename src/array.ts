@@ -40,3 +40,10 @@ export const flatten = <T>(nestedArray: T[]): T[] => {
     []
   );
 };
+
+export default {
+  intersection,
+  difference,
+  unique,
+  flatten,
+};
