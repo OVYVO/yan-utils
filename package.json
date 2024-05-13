@@ -24,12 +24,15 @@
     "url": "https://github.com/OVYVO/yan-utils/issues"
   },
   "devDependencies": {
+    "@rollup/plugin-terser": "^0.4.4",
+    "@rollup/plugin-typescript": "^11.1.6",
     "@types/node": "^20.12.11",
     "rollup": "^4.17.2",
     "tsc-alias": "^1.8.9",
     "tslib": "^2.6.2"
   },
   "dependencies": {
+    "qiniu-js": "^3.4.2",
     "typescript": "^5.4.5"
   }
 }

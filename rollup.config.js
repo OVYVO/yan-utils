@@ -2,16 +2,11 @@ import typescript from "@rollup/plugin-typescript";
 import terser from "@rollup/plugin-terser";
 
 export default {
-  input: "modules/index.ts",
+  input: "src/index.ts",
   output: {
-    name: "cliUtils",
+    name: "yanutils",
     file: "index.js",
     format: "umd",
-    globals: {
-      chalk: "chalk",
-      ora: "ora",
-      "fs-extra": "fs$1",
-    },
   },
   plugins: [
     typescript({
@@ -20,5 +15,5 @@ export default {
     }),
     terser(),
   ],
-  external: ["chalk", "ora", "fs-extra"],
+  external: ["qiniu-js"],
 };
