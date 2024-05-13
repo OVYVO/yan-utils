@@ -1,8 +1,19 @@
-export { default as array } from "./array";
-export { default as browser } from "./browser";
-export { default as copy } from "./copy";
-export { default as downLoad } from "./downLoad";
-export { default as localStorage } from "./localStorage";
-export { default as transform } from "./transform";
-export { default as is } from "./is";
-export { default as qnUpload } from "./qnUpload";
+import * as array from "./array";
+import * as browser from "./array";
+import * as copy from "./array";
+import * as downLoad from "./array";
+import * as localStorage from "./array";
+import * as transform from "./array";
+import * as is from "./array";
+import * as qnUpload from "./array";
+
+export default {
+  array,
+  browser,
+  copy,
+  downLoad,
+  localStorage,
+  transform,
+  is,
+  qnUpload,
+};
