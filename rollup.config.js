@@ -1,5 +1,7 @@
 import typescript from "@rollup/plugin-typescript";
 import terser from "@rollup/plugin-terser";
+import resolve from "@rollup/plugin-node-resolve";
+import commonjs from "@rollup/plugin-commonjs";
 import { globSync } from "glob";
 import { relative, extname } from "node:path";
 import { fileURLToPath } from "node:url";
@@ -27,6 +29,13 @@ const getEntries = () => {
     process.exit(1);
   }
 };
+// 获取打包插件
+const getPlugins = () => [
+  resolve(),
+  commonjs(),
+  typescript(getTypescriptPluginConfig()),
+  terser(),
+];
 
 const entries = getEntries();
 
@@ -45,7 +54,7 @@ export default [
         entryFileNames: `[name].js`,
       },
     ],
-    plugins: [typescript(getTypescriptPluginConfig()), terser()],
+    plugins: getPlugins(),
     external: ["qiniu-js"],
   },
   {
@@ -58,7 +67,7 @@ export default [
         "qiniu-js": "qiniu",
       },
     },
-    plugins: [typescript(getTypescriptPluginConfig()), terser()],
+    plugins: getPlugins(),
     external: ["qiniu-js"],
   },
 ];
