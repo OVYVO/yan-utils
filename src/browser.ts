@@ -55,5 +55,3 @@ export const stringifyQueryString = (
   }
   return result.join("&");
 };
-
-// export default { parseQueryString, stringifyQueryString };
