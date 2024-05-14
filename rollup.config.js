@@ -51,7 +51,7 @@ export default [
   {
     input: "src/index.ts",
     output: {
-      name: "yanUtils",
+      name: "yan-utils",
       file: "lib/index.js",
       format: "umd",
       globals: {
