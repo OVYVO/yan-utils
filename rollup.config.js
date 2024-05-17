@@ -6,11 +6,6 @@ import { globSync } from "glob";
 import { relative, extname } from "node:path";
 import { fileURLToPath } from "node:url";
 
-// 提取重复的typescript插件配置
-const getTypescriptPluginConfig = () => ({
-  compilerOptions: { lib: ["es5", "es6", "dom"], target: "es5" },
-  exclude: "node_modules/**",
-});
 // 获取所有入口文件
 const getEntries = () => {
   try {
@@ -31,9 +26,9 @@ const getEntries = () => {
 };
 // 获取打包插件
 const getPlugins = () => [
-  resolve(),
-  commonjs(),
-  typescript(getTypescriptPluginConfig()),
+  resolve({ preferBuiltins: false, exclude: "node_modules" }),
+  commonjs({ exclude: "node_modules" }),
+  typescript({ exclude: "node_modules" }),
   terser(),
 ];
 
@@ -60,14 +55,10 @@ export default [
   {
     input: "src/index.ts",
     output: {
-      name: "yan-utils",
       file: "lib/index.js",
-      format: "umd",
-      globals: {
-        "qiniu-js": "qiniu",
-      },
+      format: "es",
     },
     plugins: getPlugins(),
-    external: ["qiniu-js"],
+    context: "window",
   },
 ];
