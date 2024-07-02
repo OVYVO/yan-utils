@@ -20,7 +20,7 @@ import { qnUpload } from "yan-utils";
 //es
 import { qnUpload } from "yan-utils/lib/es/qnUpload.js";
 //cjs
-const { qnUpload } = require("yan-utils/lib/cjs/qnUpload.js");
+const { qnUpload } = require("yan-utils/lib/cjs/qnUpload.cjs");
 ```
 
 ###### 函数列表
