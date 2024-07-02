@@ -46,7 +46,7 @@ export default [
       {
         dir: "lib/cjs",
         format: "cjs",
-        entryFileNames: `[name].js`,
+        entryFileNames: `[name].cjs`,
       },
     ],
     plugins: getPlugins(),
