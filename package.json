@@ -1,6 +1,6 @@
 {
   "name": "yan-utils",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "description": "yan's utils",
   "type": "module",
   "main": "lib/index.js",
