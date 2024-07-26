@@ -25,10 +25,9 @@ const getEntries = () => {
   }
 };
 // 获取打包插件
-const getPlugins = () => [
+const commonPlugins = () => [
   resolve({ preferBuiltins: false, exclude: "node_modules" }),
   commonjs({ exclude: "node_modules" }),
-  typescript({ exclude: "node_modules" }),
   // terser(),
 ];
 
@@ -49,7 +48,7 @@ export default [
         entryFileNames: `[name].cjs`,
       },
     ],
-    plugins: getPlugins(),
+    plugins: [...commonPlugins(), typescript({ exclude: "node_modules" })],
     external: ["qiniu-js"],
   },
   {
@@ -58,7 +57,16 @@ export default [
       file: "lib/index.js",
       format: "es",
     },
-    plugins: getPlugins(),
+    plugins: [
+      ...commonPlugins(),
+      typescript({
+        exclude: "node_modules",
+        compilerOptions: {
+          declaration: true,
+          declarationDir: "lib/types",
+        },
+      }),
+    ],
     context: "window",
     external: ["qiniu-js"],
   },

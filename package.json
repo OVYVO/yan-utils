@@ -4,6 +4,7 @@
   "description": "yan's utils",
   "type": "module",
   "main": "lib/index.js",
+  "types": "lib/types/index.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "link:global": "pnpm link --global",
