@@ -10,7 +10,6 @@
     "target": "es5",
     "allowJs": true,
     "baseUrl": ".",
-    "rootDir": "src",
     "paths": {
       "@/*": ["src/*"],
       "tslib": ["node_modules/tslib/tslib.d.ts"]
