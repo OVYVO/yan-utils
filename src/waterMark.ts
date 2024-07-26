@@ -8,8 +8,6 @@ interface WaterMarkParams {
   opacity?: number;
 }
 
-let observer: MutationObserver | null = null;
-
 export const createWaterMark = (params: WaterMarkParams): void => {
   if (!params.text.length) return;
   if (!params.total) return;
@@ -48,7 +46,7 @@ export const createWaterMark = (params: WaterMarkParams): void => {
     span.innerText = text;
     waterMarkDiv.appendChild(span);
   }
-  observer = new MutationObserver((mutations) => {
+  (window as any).WaterMarkObserver = new MutationObserver((mutations) => {
     mutations.forEach((mutation: any) => {
       if (
         mutation.type === "attributes" &&
@@ -66,7 +64,7 @@ export const createWaterMark = (params: WaterMarkParams): void => {
       }
     });
   });
-  observer.observe(document.body, {
+  (window as any).WaterMarkObserver.observe(document.body, {
     childList: true,
     attributes: true,
     subtree: true,
@@ -76,8 +74,8 @@ export const createWaterMark = (params: WaterMarkParams): void => {
   });
 };
 export const clearWaterMark = (): void => {
-  if (observer) {
-    observer.disconnect();
+  if ((window as any).WaterMarkObserver) {
+    (window as any).WaterMarkObserver.disconnect();
   }
   const waterMarkDom: any = document.querySelector("#waterMark");
   if (waterMarkDom) {
