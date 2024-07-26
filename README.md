@@ -23,10 +23,14 @@ import { qnUpload } from "yan-utils/lib/es/qnUpload.js";
 const { qnUpload } = require("yan-utils/lib/cjs/qnUpload.cjs");
 ```
 
-###### 函数列表
-
-> 👽️👽️👽️ 太多了，就不一一列举
-
 ###### 注意事项
 
-> 如果您需要再本地 vite 启动的项目调试，注意安装 vite-plugin-commonjs 插件，否则会报：The requested module '/.../yan-utils/lib/index.js' does not provide an export named 'default' 错误
+> 👽️👽️👽️ 如果您需要使用**qnUpload**函数,如果您项目中已安装**qiniu-js**依赖，您可以放心使用，如果您项目中未安装该依赖请您自行安装
+
+```javascript
+yarn add qiniu-js
+# or
+npm i qiniu-js
+# or
+pnpm add qiniu-js
+```

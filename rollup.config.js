@@ -29,7 +29,7 @@ const getPlugins = () => [
   resolve({ preferBuiltins: false, exclude: "node_modules" }),
   commonjs({ exclude: "node_modules" }),
   typescript({ exclude: "node_modules" }),
-  terser(),
+  // terser(),
 ];
 
 const entries = getEntries();
@@ -60,5 +60,6 @@ export default [
     },
     plugins: getPlugins(),
     context: "window",
+    external: ["qiniu-js"],
   },
 ];

@@ -10,7 +10,7 @@ interface WaterMarkParams {
 
 let observer: MutationObserver | null = null;
 
-const createWaterMark = (params: WaterMarkParams): void => {
+export const createWaterMark = (params: WaterMarkParams): void => {
   if (!params.text.length) return;
   if (!params.total) return;
   if (document.querySelector("#waterMark")) return;
@@ -75,7 +75,7 @@ const createWaterMark = (params: WaterMarkParams): void => {
     characterDataOldValue: false,
   });
 };
-const clearWaterMark = (): void => {
+export const clearWaterMark = (): void => {
   if (observer) {
     observer.disconnect();
   }
