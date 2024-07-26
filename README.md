@@ -25,7 +25,7 @@ const { qnUpload } = require("yan-utils/lib/cjs/qnUpload.cjs");
 
 ###### 注意事项
 
-> 👽️👽️👽️ 如果您需要使用**qnUpload**函数,如果您项目中已安装**qiniu-js**依赖，您可以放心使用，如果您项目中未安装该依赖请您自行安装
+> 👽️👽️👽️ 如果您需要使用**qnUpload**函数,且项目中已安装**qiniu-js**依赖，您可以放心使用，如项目中未安装**qiniu-js**依赖请执行以下任意命令自行安装：
 
 ```javascript
 yarn add qiniu-js
