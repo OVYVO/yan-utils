@@ -5,11 +5,11 @@
 ###### 安装
 
 ```javascript
-yarn add yan-utils
+yarn add yan-utils@latest
 # or
-npm i yan-utils -S
+npm i yan-utils@latest -S
 # or
-pnpm add yan-utils
+pnpm add yan-utils@latest
 ```
 
 ###### 引入
