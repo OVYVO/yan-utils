@@ -46,24 +46,28 @@ export const createWaterMark = (params: WaterMarkParams): void => {
     span.innerText = text;
     waterMarkDiv.appendChild(span);
   }
-  (window as any).WaterMarkObserver = new MutationObserver((mutations) => {
-    mutations.forEach((mutation: any) => {
-      if (
-        mutation.type === "attributes" &&
-        mutation.target.id === "waterMark"
-      ) {
-        clearWaterMark();
-        createWaterMark({ ...params });
-      }
-      if (
-        mutation.type === "childList" &&
-        mutation.removedNodes.some((node: any) => node.id === "waterMark")
-      ) {
-        clearWaterMark();
-        createWaterMark({ ...params });
-      }
-    });
-  });
+  (window as any).WaterMarkObserver = new MutationObserver(
+    (mutations: any[]) => {
+      mutations.forEach((mutation: any) => {
+        if (
+          mutation.type === "attributes" &&
+          mutation.target.id === "waterMark"
+        ) {
+          clearWaterMark();
+          createWaterMark({ ...params });
+        }
+        if (mutation.type === "childList" && mutation.removedNodes.length > 0) {
+          if (
+            mutation.removedNodes[0].id == "waterMark" ||
+            mutation.target.id == "waterMark"
+          ) {
+            clearWaterMark();
+            createWaterMark({ ...params });
+          }
+        }
+      });
+    }
+  );
   (window as any).WaterMarkObserver.observe(document.body, {
     childList: true,
     attributes: true,
