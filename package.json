@@ -22,7 +22,7 @@
   "license": "ISC",
   "repository": {
     "type": "git",
-    "url": "https://github.com/OVYVO/yan-utils.git"
+    "url": "git+https://github.com/OVYVO/yan-utils.git"
   },
   "bugs": {
     "url": "https://github.com/OVYVO/yan-utils/issues"
