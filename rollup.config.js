@@ -28,7 +28,7 @@ const getEntries = () => {
 const commonPlugins = () => [
   resolve({ preferBuiltins: false, exclude: "node_modules" }),
   commonjs({ exclude: "node_modules" }),
-  // terser(),
+  terser(),
 ];
 
 const entries = getEntries();
